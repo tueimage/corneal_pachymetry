@@ -1,10 +1,10 @@
 """
-Script that creates the network architecture.
+Script that creates the CNN architecture with dimension reduction.
 
-Before running the script, it is important that:
-- The libraries from the requirements.txt file are installed
+Be sure that the required external packages from requirements.txt
+are installed before running the code. 
 
-Author: R. Lucassen (r.t.lucassen@student.tue.nl)
+Author: R.T. Lucassen
 """
 
 import tensorflow as tf
