@@ -1,5 +1,5 @@
 # Corneal Pachymetry
-This repository contains python code for corneal pachymetry in anterior segment optical coherence tomography (AS-OCT) scans as described in the paper **Corneal Pachymetry by AS-OCT after Descemet’s Membrane Endothelial Keratoplasty** by Heslinga *et al.* [1]. Analysis of the corneal thickness, estimated using a convolutional neural network (CNN), can be performed by means of a graphical user interface (GUI). The GUI allows for interactive inspection of corneal thinkness per radial slice, as well as for pachymetry maps and differential pachymetry maps of the cornea as a whole. The specific CNN provided in this repository is a small version of the **CNN with dimension reduction** described in [1], trained with only 50% of the filters to reduce the model size. The code for creating the full CNN with dimension reduction model is also available here.
+This repository contains python code for corneal pachymetry in anterior segment optical coherence tomography (AS-OCT) scans as described in the paper **Corneal Pachymetry by AS-OCT after Descemet’s Membrane Endothelial Keratoplasty** by Heslinga *et al.* [1], developed by R.T.Lucassen. Analysis of the corneal thickness, estimated using a convolutional neural network (CNN), can be performed by means of a graphical user interface (GUI). The GUI allows for interactive inspection of corneal thinkness per radial slice, as well as for pachymetry maps and differential pachymetry maps of the cornea as a whole. The specific CNN provided in this repository is a small version of the **CNN with dimension reduction** described in [1], trained with only 50% of the filters to reduce the model size. The code for creating the full CNN with dimension reduction model is also available here. 
 
 [1] https://arxiv.org/abs/2102.07846
 
@@ -14,7 +14,7 @@ The repository has the following folder structure:
   
     ├── network 
     │   ├── network.h5 
-    │   └── cnn_with_dim_red.py 
+    │   └── network.py 
     ├── .gitignore 
     ├── README.md 
     ├── gui.py 
@@ -34,7 +34,7 @@ The explanation of the GUI below addresses all features and noteworthy details f
 After executing ```gui.py```, a full screen window is created with in the top left corner two buttons to add AS-OCT scan images and one button in the top right corner to close the window. Click any of the two top left buttons to load in the data. Be aware that the GUI currently only supports 16 radial B-scan images (centered, 960x384 pixels) as input, which should be selected at once using SHIFT-click. The following naming convention for a single radial image is used: pt{*patient ID*}\_visit{*visit ID*}\_{*eye*}\_im{*image number*}.png, (e.g. pt001_visit07\_1\_im000.png). If the selected input images do not follow the specified naming convention, or if not exactly 16 images were selected, an error message is displayed. If a selection is accepted, the B-scan images are further processed, delineations are predicted using the CNN with dimension reduction, the thickness is measured, and finally the pachymetry map is made. These steps can take a number of seconds. Note that the GUI can temporarily become unresponsive during the prediction and processing stage. Loaded data can also be removed using the 'Remove data' button.
 
 ### Main screen
-The main screen is divided into 4 sections: The B-scan (top left), the pachymetry map (top right), the thickness profile plot (bottom left), visualization settings (bottom right). Two AS-OCT scans of 16 images can be loaded at the same time. For more details on the thickness measurement and pachymetry mapping approach, we refer the user to the paper. Note that an artist impression of the B-scan was used.
+The main screen is divided into 4 sections: The B-scan (top left), the pachymetry map (top right), the thickness profile plot (bottom left), visualization settings (bottom right). Two AS-OCT scans of 16 images can be loaded at the same time. For more details on the thickness measurement and pachymetry mapping approach, we refer the user to the paper. Note that an artist impression of the B-scan was used in the image.
 ![main_screen](https://user-images.githubusercontent.com/54849762/115051077-b44ef800-9edc-11eb-8b08-95efaa0ccb54.png)
 
 #### B-scan
