@@ -1,7 +1,7 @@
 # Corneal Pachymetry
 This repository contains python code for corneal pachymetry in anterior segment optical coherence tomography (AS-OCT) scans as described in the paper **Corneal Pachymetry by AS-OCT after Descemet’s Membrane Endothelial Keratoplasty** by Heslinga *et al.* [1], developed by R.T. Lucassen. Analysis of the corneal thickness, estimated using a convolutional neural network (CNN), can be performed by means of a graphical user interface (GUI). The GUI allows for interactive inspection of corneal thinkness per radial slice, as well as for pachymetry maps and differential pachymetry maps of the cornea as a whole. The specific CNN provided in this repository is a small version of the **CNN with dimension reduction** described in [1], trained with only 50% of the filters to reduce the model size. The code for creating the full CNN with dimension reduction model is also available here. 
 
-[1] https://arxiv.org/abs/2102.07846
+[1] https://www.nature.com/articles/s41598-021-93186-9
 
 ### Requirements
 To install the required external python packages, run the following command:
